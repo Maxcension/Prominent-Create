@@ -3,15 +3,15 @@
   "id": "create",
   "version": "${version}",
 
-  "name": "Create",
-  "description": "Technology that empowers the player.",
+  "name": "Prominent Create",
+  "description": "A Create fork to work in the Prominence II Modpack.",
   "authors": [
     "Fabricators of Create",
     "Creators of Create"
   ],
   "contact": {
-    "issues": "https://github.com/Fabricators-of-Create/Create/issues",
-    "sources": "https://github.com/Fabricators-of-Create/Create"
+    "issues": "https://github.com/nvb-uy/Prominent-Create/issues",
+    "sources": "https://github.com/nvb-uy/Prominent-Create"
   },
 
   "license": "MIT",
@@ -73,8 +73,7 @@
   "breaks": {
     "optifabric": "*",
     "colormatic": "<=3.1.1",
-    "iris": "<=1.2.5",
-    "sodium": "<0.5.0"
+    "iris": "<=1.2.5"
   },
 
   "custom": {
