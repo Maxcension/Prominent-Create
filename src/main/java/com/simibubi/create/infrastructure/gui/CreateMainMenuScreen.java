@@ -133,7 +133,7 @@ public class CreateMainMenuScreen extends AbstractSimiScreen {
 
 		ms.pushPose();
 		ms.translate(0, 0, 200);
-		graphics.drawCenteredString(font, Components.literal(Create.NAME).withStyle(ChatFormatting.BOLD)
+		graphics.drawCenteredString(font, Components.literal("Prominent Create").withStyle(ChatFormatting.BOLD)
 			.append(
 				Components.literal(" v" + Create.VERSION).withStyle(ChatFormatting.BOLD, ChatFormatting.WHITE)),
 			width / 2, 89, 0xFF_E4BB67);
