@@ -34,7 +34,6 @@ import com.simibubi.create.foundation.utility.RegisteredObjects;
 import io.github.fabricators_of_create.porting_lib.util.ShapedRecipeUtil;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.crafting.Recipe;

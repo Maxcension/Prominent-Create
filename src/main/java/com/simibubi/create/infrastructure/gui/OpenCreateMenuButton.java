@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.gui.ScreenOpener;
 import com.simibubi.create.foundation.utility.Components;
@@ -35,7 +34,8 @@ public class OpenCreateMenuButton extends Button {
 	}
 
 	public static void click(Button b) {
-		ScreenOpener.open(new CreateMainMenuScreen(Minecraft.getInstance().screen));
+		Minecraft instance = Minecraft.getInstance();
+		ScreenOpener.open(new CreateMainMenuScreen(instance.screen));
 	}
 
 	public static class SingleMenuRow {

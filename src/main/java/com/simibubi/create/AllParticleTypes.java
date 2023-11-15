@@ -18,11 +18,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 
 public enum AllParticleTypes {
 
@@ -52,7 +50,8 @@ public enum AllParticleTypes {
 
 	@Environment(EnvType.CLIENT)
 	public static void registerFactories() {
-		ParticleEngine particles = Minecraft.getInstance().particleEngine;
+		Minecraft instance = Minecraft.getInstance();
+		ParticleEngine particles = instance.particleEngine;
 		for (AllParticleTypes particle : values())
 			particle.entry.registerFactory(particles);
 	}

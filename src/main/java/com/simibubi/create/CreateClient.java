@@ -8,7 +8,6 @@ import com.simibubi.create.content.contraptions.glue.SuperGlueSelectionHandler;
 import com.simibubi.create.content.contraptions.render.ContraptionRenderDispatcher;
 import com.simibubi.create.content.contraptions.render.SBBContraptionManager;
 import com.simibubi.create.content.decoration.encasing.CasingConnectivity;
-import com.simibubi.create.content.equipment.armor.AllArmorMaterials;
 import com.simibubi.create.content.equipment.armor.RemainingAirOverlay;
 import com.simibubi.create.content.equipment.bell.SoulPulseEffectHandler;
 import com.simibubi.create.content.equipment.blueprint.BlueprintOverlayRenderer;
@@ -44,7 +43,6 @@ import com.simibubi.create.infrastructure.config.AllConfigs;
 import com.simibubi.create.infrastructure.ponder.AllPonderTags;
 import com.simibubi.create.infrastructure.ponder.PonderIndex;
 
-import io.github.fabricators_of_create.porting_lib.util.ArmorTextureRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
@@ -129,6 +127,7 @@ public class CreateClient implements ClientModInitializer {
 	private static void registerOverlays() {
 		HudRenderCallback.EVENT.register((graphics, partialTicks) -> {
 			Window window = Minecraft.getInstance().getWindow();
+			Minecraft instance = Minecraft.getInstance();
 
 			RemainingAirOverlay.render(graphics, window.getGuiScaledWidth(), window.getGuiScaledHeight()); // Create's Remaining Air
 			TrainHUD.renderOverlay(graphics, partialTicks, window); // Create's Train Driver HUD
@@ -138,7 +137,7 @@ public class CreateClient implements ClientModInitializer {
 			SCHEMATIC_HANDLER.renderOverlay(graphics, partialTicks, window); // Create's Schematics
 			ToolboxHandlerClient.renderOverlay(graphics, partialTicks, window); // Create's Toolboxes
 			VALUE_SETTINGS_HANDLER.render(graphics, window.getGuiScaledWidth(), window.getGuiScaledHeight()); // Create's Value Settings
-			TrackPlacementOverlay.renderOverlay(Minecraft.getInstance().gui, graphics); // Create's Track Placement
+			TrackPlacementOverlay.renderOverlay(instance.gui, graphics); // Create's Track Placement
 
 			// fabric: normally a separate event listener
 			PlacementHelpers.afterRenderOverlayLayer(graphics, partialTicks, window);
