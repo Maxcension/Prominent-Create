@@ -27,6 +27,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 
 public class BogeyStyle {
@@ -84,7 +85,10 @@ private Map<BogeySizes.BogeySize, ResourceLocation> sizes;
 	}
 
 	public Block getBlockOfSize(BogeySizes.BogeySize size) {
-		return BuiltInRegistries.BLOCK.get(sizes.get(size));
+		if (sizes.get(size) == null) return Blocks.AIR;
+
+		Block block = BuiltInRegistries.BLOCK.get(sizes.get(size));
+		return block == null ? Blocks.AIR : block;
 	}
 
 	public Set<BogeySizes.BogeySize> validSizes() {

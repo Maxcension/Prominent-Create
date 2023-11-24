@@ -50,7 +50,7 @@ public class BogeySizes {
 
 	public record BogeySize(ResourceLocation location, float wheelRadius) {
 		public BogeySize(String modId, String name, float wheelRadius) {
-			this(new ResourceLocation(modId, name), wheelRadius);
+			this(name == null ? new ResourceLocation("minecraft:air") : new ResourceLocation(modId, name), wheelRadius);
 		}
 
 		public BogeySize increment() {
